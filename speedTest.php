@@ -1,7 +1,5 @@
 <?php
-
 echo 'Test started...' . PHP_EOL;
-
 $location = isset($argv[1]) ? $argv[1] : 'http://download.thinkbroadband.com/50MB.zip';
 
 $handle = fopen($location, 'r');
@@ -27,4 +25,5 @@ if($diff == 0) {
 }
 
 $packSize = ($packSize / (1024 * 1024)) * 8;
-echo round($packSize / $diff, 2) . 'Mbps' . PHP_EOL;
+echo round($packSize, 2) . 'Mb in ' . $diff . ' seconds, ';
+echo round($packSize / $diff, 2) . 'Mb/s' . PHP_EOL;
